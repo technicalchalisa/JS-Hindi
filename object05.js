@@ -15,14 +15,14 @@ const JsUser = {
     lastLoginDays: ["Monday", "Saturday"]
 }
 
-// console.log(JsUser.email);
-// console.log(JsUser["email"]);
-// console.log(typeof JsUser[mySym]);
+console.log(JsUser.email);
+console.log(JsUser["email"]);
+console.log(typeof JsUser[mySym]);
 
 JsUser.email = "arshad@google.com"
-// Object.freeze(JsUser) //changed not Propagate
+Object.freeze(JsUser) //changed not Propagate
 JsUser.email = "arshad@microsoft.com"
-// console.log(JsUser);
+console.log(JsUser);
 
 JsUser.greeting = function (){
     console.log("Hello JS user");
