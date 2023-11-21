@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Number Table</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    label {
+      font-weight: bold;
+    }
+    input[type="text"] {
+      padding: 8px;
+      margin-right: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      padding: 8px 16px;
+      border-radius: 5px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    #tableContainer {
+      margin-top: 20px;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+
+        /* Adjustments for smaller screens */
+        @media only screen and (max-width: 600px) {
+      body {
+        margin: 10px;
+      }
+      input[type="text"] {
+        width: 70%;
+        margin-right: 5px;
+      }
+      button {
+        width: 25%;
+        margin-top: 10px;
+      }
+      table {
+        font-size: 14px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <label for="numberInput">Enter a number:</label>
+  <input type="text" id="numberInput">
+  <button onclick="generateTable()">Generate Table</button>
+
+  <div id="tableContainer"></div>
+
+  <script>
+    function generateTable() {
+      var userInput = document.getElementById('numberInput').value;
+      var parsedInput = parseInt(userInput);
+
+      var tableContainer = document.getElementById('tableContainer');
+      tableContainer.innerHTML = ''; // Clear previous content
+
+      if (!isNaN(parsedInput) && Number.isInteger(parsedInput) && parsedInput > 0) {
+        var table = '<h3>Table for ' + parsedInput + ':</h3><table><tr><th>Number</th><th>Result</th></tr>';
+        for (var i = 1; i <= 10; i++) {
+          table += '<tr><td>' + parsedInput + ' x ' + i + '</td><td>' + (parsedInput * i) + '</td></tr>';
+        }
+        table += '</table>';
+        tableContainer.innerHTML = table;
+      } else {
+        alert('Please input a valid positive integer number.');
+      }
+    }
+  </script>
+
+</body>
+</html>

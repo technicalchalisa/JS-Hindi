@@ -9,7 +9,7 @@ const userEmail = "nagama.ai"
         // falsy values
         // false, 0, -0, BigInt 0n, "", null, undefined, NaN
         
-        //truthy values
+        //truthy values 
         // "0", 'false', " ", [], {}, function(){}, 
 
         const checkForArray = []
@@ -41,7 +41,8 @@ const userEmail = "nagama.ai"
 // condition ? true : false
 
 const iceTeaPrice = 100
-iceTeaPrice >=  80 ? console.log("less then 80") : console.log("more then 80");
+// iceTeaPrice >=  80 ? console.log("less then 80") : console.log("more then 80");
+
 
 
 
